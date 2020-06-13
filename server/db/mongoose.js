@@ -4,6 +4,8 @@ mongoose.Promise = global.Promise;
 
 const url = 'mongodb://localhost:27017/TodoApp';
 
-mongoose.connect(process.env.MONGODB_URI || url, {useNewUrlParser: true});
+mongoose.set('useFindAndModify', false);
+
+mongoose.connect(process.env.MONGODB_URI || url, {useNewUrlParser: true, useUnifiedTopology: true});
 
 //module.exports = {mongoose};
